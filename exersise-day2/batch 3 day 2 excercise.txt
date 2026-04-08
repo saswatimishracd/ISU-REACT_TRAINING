@@ -1,0 +1,11 @@
+1 : Create a component with three input fields. Use useRef so that when a user finishes typing 4 characters in the first input, the focus automatically jumps to the second, and then the third.
+
+
+2 : Create a list of 5 users (objects with id, name, and isAdmin). Use useState and .map() to display them. Add a button that uses conditional rendering to only show users where isAdmin is true.
+
+3:  Build a simple "messages" list. Use useState to add a new string to the array every time a button is clicked. Use useRef and useEffect to ensure the window automatically scrolls to the newest message at the bottom of the list.
+
+4:  Create a Product component that receives name and price as props and Use a "Toggle Edit" state; when true, the name should appear in an <input>, and when false, it should appear as an <h1>.
+
+
+5: Iterate through a list of 10 color names. Each item should have its own "Highlight" button. When clicked, use a Ref to change that specific item's font weight to "bold" without re-rendering the entire list.

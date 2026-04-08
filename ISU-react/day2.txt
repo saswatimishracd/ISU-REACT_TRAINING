@@ -1,0 +1,34 @@
+rafce,rfc,rcc=> shortcut
+
+Props => Parent-child communication 
+    data is only read-only(not changable)
+
+Prop drilling => 
+    Passing of component from one component to many components or many component through props.
+    Types can be string num bool array obj component
+
+Hooks =>
+    useState=> Manage the state of a variable
+               triggers a re-render
+               usf=> shortcut
+
+    useEffect=> used to call an api or effect in the UI when page loads
+    useContext=> pass value from one component to various components directly
+    useReducer=> same as useState(handles complex data)
+    useRef=> used to directly manipulate DOM
+           *Updating the component does not trigger re-render
+           measure layout size and scro; position of the window
+
+    useMemo,useCallback=> memorise values, memorise functions
+
+    *Hooks are defined at top level
+    *Define it inside a component
+
+Events=> 
+        onClick=>
+        onChange=>
+
+Conditional Rendering=>
+                    Using if else 
+                    Using ternary operator
+                    Using AND(&&) operator
