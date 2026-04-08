@@ -6,7 +6,7 @@ const ColorList = () => {
     "Orange", "Pink", "Brown", "Black", "White"
   ];
 
-  // Store refs in array
+
   const itemRefs = useRef([]);
 
   const highlight = (index) => {
