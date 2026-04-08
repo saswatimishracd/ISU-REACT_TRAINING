@@ -4,19 +4,19 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import ColorList from './components/ColorList'
-// import Product from './components/Product'
-// import AddMessage from './components/AddMessage'
-// import UseRef from './components/UseRef'
-// import UseState from './components/UseState'
+import Product from './components/Product'
+import AddMessage from './components/AddMessage'
+import UseRef from './components/UseRef'
+import UseState from './components/UseState'
 
 function App() {
 
   return (
     <> 
-    {/* <UseRef /> */}
-    {/* <UseState /> */}
-    {/* <AddMessage /> */}
-    {/* <Product name="Samsung" price="50000" /> */}
+    <UseRef />
+    <UseState />
+    <AddMessage />
+    <Product name="Samsung" price="50000" />
     <ColorList />
      </>
   )
