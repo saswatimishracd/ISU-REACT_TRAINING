@@ -1,0 +1,22 @@
+Exercise 1: 
+
+Task: Create a button that has a blue background, white text, 10px padding, and 4px border-radius.
+Requirements:Global CSS: Create an index.css file with a .btn class and import it into your app.
+
+Exercise 2: 
+
+Task: Build a StatusCard component that accepts a type prop (e.g., "success" or "error").
+Requirements:Using styled-components, change the background color dynamically by passing the type prop into the style definition.
+
+
+Exercise 3: 
+
+Task: Define a "Brand Primary" color (e.g., #6200ee) and apply it to a Header and a Footer component.
+Requirements:Global CSS: Use a CSS variable (--primary-color) defined in :root.
+
+
+
+Exercise 4: 
+
+Task: Create a simple navigation link that turns red on hover and hides on mobile screens (width < 600px).
+Requirements: Implement it using styled-components with standard CSS nesting.

@@ -1,0 +1,17 @@
+CSS 
+    global(external css file) 
+        Apply style across entire application
+        difficult to maintain
+        very easy to set up
+        good for small project
+
+    inline
+    library
+    css framework
+    css modules
+        scoped css
+        entire application or specific
+        easy to manage time
+        perfomance better
+        separates structure and design
+        to create=> css_module_name.module.css example=> (Button.module.css)
