@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from 'react-oidc-context';
 import { useAuthData } from '../context/AuthDataContext';
+import { QRCodeSVG } from 'qrcode.react';
 
 export default function QRGenerator() {
   const auth = useAuth();
@@ -178,7 +179,9 @@ export default function QRGenerator() {
                          </h2>
                          <p style={{margin: '0 0 16px', fontSize: '1.05rem', fontWeight: 700, color: '#333'}}>Scan & Pay</p>
                          
-                         <img src={`data:image/png;base64,${base64Image}`} alt="Generated QR" style={{width: '240px', height: '240px', objectFit: 'contain', display: 'block'}} />
+                         <div style={{ background: 'white', padding: '8px' }}>
+                            <QRCodeSVG value={qrString} size={200} />
+                         </div>
                          
                          <p style={{margin: '12px 0 16px', fontSize: '0.8rem', fontWeight: 700, textAlign: 'center', color: '#111'}}>
                             UPI Id: {extractVpaString(selectedVpa)}
