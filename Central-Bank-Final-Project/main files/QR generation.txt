@@ -1,0 +1,47 @@
+CBOI QR Code Generation API
+Endpoint Description
+This endpoint is used to convert a QR code into a Base64 encoded string. It is particularly useful for applications that require QR code data to be transmitted in a compact format.
+API Details
+Method: POST
+URL: https://api-preprod.txninfra.com/encrV4/CBOI/merchant/qr_convert_to_base64
+Request Body: The request must contain a JSON object with the following parameter:
+RequestData (string): This parameter should include the QR code data that needs to be converted into Base64 format.
+Request Headers: 
+pass_key: Should contain the pass_key used for CBOI UAT
+Authorization: Should contain the Authentik token used for CBOI UAT
+Request Body (Encrypted)
+JSON
+{
+ "RequestData": "BlSTBXjSs0YrCsTYA8CEQpNbXjeoiw ..."
+}
+
+Actual Request Body (Unencrypted)
+JSON
+{
+    "qrString": "upi://pay?pa=tsp-iservuqrsbrp@cbin&pn=Mr Soumyashree Kumar Priyadarshanti Subhamshree Sribastava Rout&cu=INR&mode=02&purpose=00&orgId=159016&mid=CBOIC8FAFE68&mc=9399&tn=06942676&msid=13505251605199&sign=MEQCIEOwZ/I19vrV8rwHKxFd0ExAo6/koUjA73oPuMcjD+wmAiAx+ofIsN/mV9niXZ7ZxO2JK34ChOsK4uj7A+b7ONRMBQ=="
+}
+
+Response (Encrypted)
+JSON
+{
+    "ResponseData": "MwuxYsPSl8pVLgQTfX7OauyDZA9ji+6N1lEoiht6JNxC9YLYDyey8OTM66lFX9/vZ5LowhwBA/BagtrKDx0IU4l40XBAP6XAQ8rjQcejBAGLKdK+ABpQGFjkLdJ/uwAQCg/+WFyKEM/46R7qxRWZGk/ts3QQ8jI1rOByIRhgMWV5/DAgG6Tapof7CM6epAqHTJSIUZ6tGmPyaF9RilT6Ar8FGNfFtWNIz7LE67lu0CoPczYOII/…….."
+}
+
+Response (Decrypted)
+JSON
+{
+    "base64Image": "iVBORw0KGgoAAAANSUhEUgAAA7EAAAY6CAYAAAAFbOvlAAAAB….."
+}
+Response Description
+Status Code: 200 OK
+Content-Type: application/json
+Response Body: The response will return a JSON object containing:
+ResponseData (string): This field will contain the Base64 encoded string of the QR code if the conversion is successful. In this case, it is currently returned as an empty string.
+Notes
+Ensure that the RequestData is properly formatted as a valid QR code string for successful conversion.
+The endpoint is designed to handle large payloads, but it is recommended to keep the data within reasonable limits to avoid performance issues.
+
+
+
+
+

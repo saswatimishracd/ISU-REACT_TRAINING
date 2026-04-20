@@ -1,0 +1,147 @@
+CBOI SOUNDBOX LANGUAGE STATUS UPDATE API
+
+
+UAT URL :-  https://services-cboi-uat.isupay.in/CBOI/isu_soundbox/lang/status_update
+Production URL : https://centralbank-prod.isupay.in/CBOI/isu_soundbox/lang/status_update
+
+1. Request :for lang_update
+
+{
+ 	
+	"key": "lang_update",
+	"message": {
+    	"column2": "987654321012",
+    	"column3": "",
+    	"column6": "",
+    	"column7": "HINDI",
+    	"column8": "tam",
+    	"column9": "ACTIVE",
+    	"column10": "network isuue."
+	
+}
+}
+ 
+ Mandatory Parameters ➖
+column2(tid)
+column7(delete_language)
+column8(update_language)
+column9(status)
+column10(errorDesc)
+ 
+ 
+ 
+Response Parameters:
+
+ (SUCCESS)
+ 
+1.{
+    "result": "success",
+    "responseCode": "00",
+    "message": "Language update successful",
+    "data": {}
+}
+ 
+ 
+(FAILED)
+ 
+{
+	"result": "failed",
+	"responseCode": 01,
+	"message": "Error during api call",
+	"data": {}
+}
+2. Request :for device_liveness
+{
+ 	
+	"key": "device_liveness",
+	"message": {
+    	"column2": "987654321012",
+    	"column3": "",
+    	"column6": "FALSE",
+    	"column7": "",
+    	"column8": "",
+    	"column9": "",
+    	"column10": ""
+	
+}
+}
+ Mandatory Parameters ➖
+column2(tid)
+column6(device_status)
+
+
+ 
+Response Parameters:
+
+( SUCCESS)
+ 
+1.{
+    "result": "success",
+    "responseCode": "00",
+    "message": "Device liveliness status updated successfully",
+    "data": {}
+}
+ 
+ 
+(FAILED )
+ 
+{
+	"result": "failed",
+	"responseCode": 01,
+	"message": “Device liveliness update denied due to time conflict”
+	"data": {}
+}
+ 
+{
+	"result": "failed",
+	"responseCode": 01,
+	"message": “Device liveliness status already updated”
+	"data": {}
+}
+ 
+ 
+3. Request :for campaign_update
+Request Parameters:
+ 
+{
+ 	
+	"key": "campaign_update",
+	"message": {
+    	"column2": "9090876543",
+    	"column3": "4567899",
+    	"column6": "",
+    	"column7": "",
+    	"column8": "",
+    	"column9": "Active",
+    	"column10": ""
+	
+}
+}
+  Mandatory Parameters ➖
+column2(tid)
+column3(ledger_id)
+column3(status)
+ 
+ 
+ 
+Response Parameters:
+
+ (SUCCESS)
+ 
+1.{
+    "result": "success",
+    "responseCode": "00",
+    "message": "Campaign ledger update successfully",
+    "data": {}
+}
+Failed
+{
+	"result": "failed",
+	"responseCode": 01,
+	"message": "Campaign ledger update denied due to time conflict",
+	"data": {}
+}
+
+
+
+
