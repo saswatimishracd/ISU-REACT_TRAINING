@@ -50,13 +50,15 @@ function AppRoutes() {
         <Route path="onboarding" element={<MerchantOnboarding />} />
         <Route path="soundbox" element={<SoundboxManager />} />
         <Route path="qr-generator" element={<QRGenerator />} />
-        <Route path="support" element={<div className="page-header"><h1 className="page-title">Help & Support</h1><p style={{color: 'var(--text-secondary)'}}>No Data Found. Try raising a ticket using the Raise a Ticket module.</p></div>} />
+        <Route path="support" element={<HelpSupport />} />
       </Route>
     </Routes>
   );
 }
 
+
 import { AuthDataProvider } from './context/AuthDataContext';
+import HelpSupport from './pages/HelpSupport';
 
 function App() {
   return (

@@ -11,6 +11,7 @@ export default function Layout() {
   const auth = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const { vpqList, setVpaList, isLoadingData, setIsLoadingData } = useAuthData();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
     if (auth.isAuthenticated && vpqList.length === 0 && !isLoadingData) {
@@ -68,12 +69,27 @@ export default function Layout() {
 
   return (
     <div className="app-layout">
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} />
       <div className="app-main">
         <header className="app-header">
-          <div style={{fontWeight: 600, color: 'var(--primary-blue)', display: 'flex', alignItems: 'center', gap: '10px'}}>
-             <span style={{fontSize: '1.2rem', letterSpacing: '0.5px'}}>Central Bank of India</span>
-          </div>
+<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+  
+  {/* ✅ Hamburger Icon */}
+  <button
+    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+    style={{
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      padding: '6px'
+    }}
+  >
+    <svg width="22" height="22" viewBox="0 0 24 24">
+      <path d="M3 6h18M3 12h18M3 18h18" stroke="#333" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  </button>
+
+</div>
           <div style={{display: 'flex', gap: '24px', alignItems: 'center'}}>
              <div style={{fontSize: '0.8rem', color: 'var(--text-secondary)'}}>
                Merchant Support No: <strong>1800 22 1911</strong> | <strong>upi.support@centralbank.co.in</strong>

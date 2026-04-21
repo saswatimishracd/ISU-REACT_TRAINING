@@ -84,6 +84,27 @@ export default function UserFetch() {
     }
   };
 
+  const transactions = [
+  {
+    id: "e1b18ff4a4563898",
+    amount: "10,000",
+    date: "24/02/2026, 12:23 PM",
+    status: "Received"
+  },
+  {
+    id: "e1b18ff4a4563899",
+    amount: "5,000",
+    date: "24/02/2026, 01:10 PM",
+    status: "Received"
+  },
+  {
+    id: "e1b18ff4a4563900",
+    amount: "2,500",
+    date: "24/02/2026, 02:45 PM",
+    status: "Pending"
+  }
+];
+
   return (
     <div>
       <div className="page-header">
@@ -153,6 +174,45 @@ export default function UserFetch() {
            </div>
         </div>
       )}
+
+      <div className="card">
+  <h3 style={{marginBottom: '1rem'}}>Transaction Reports</h3>
+
+  <table style={{width: '100%', borderCollapse: 'collapse'}}>
+    <thead>
+      <tr style={{textAlign: 'left', borderBottom: '1px solid #ddd'}}>
+        <th style={{padding: '10px'}}>S. No.</th>
+        <th style={{padding: '10px'}}>Transaction ID</th>
+        <th style={{padding: '10px'}}>Amount</th>
+        <th style={{padding: '10px'}}>Date</th>
+        <th style={{padding: '10px'}}>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {transactions.map((txn, index) => (
+        <tr key={txn.id} style={{borderBottom: '1px solid #f0f0f0'}}>
+          <td style={{padding: '10px'}}>{index + 1}</td>
+          <td style={{padding: '10px'}}>{txn.id}</td>
+          <td style={{padding: '10px'}}>₹ {txn.amount}</td>
+          <td style={{padding: '10px'}}>{txn.date}</td>
+          <td style={{padding: '10px'}}>
+            <span style={{
+              padding: '4px 8px',
+              borderRadius: '4px',
+              fontSize: '12px',
+              backgroundColor: txn.status === 'Received' ? '#e6f4ea' : '#fff3cd',
+              color: txn.status === 'Received' ? '#2e7d32' : '#856404'
+            }}>
+              {txn.status}
+            </span>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
     </div>
   );
 }
