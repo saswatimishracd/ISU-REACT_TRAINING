@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useAuth } from 'react-oidc-context';
 import { useAuthData } from '../context/AuthDataContext';
 import { QRCodeSVG } from 'qrcode.react';
+import logo from '../assets/CentralBankLogo.png'
 
 export default function QRGenerator() {
   const auth = useAuth();
@@ -148,31 +149,24 @@ export default function QRGenerator() {
                          alignItems: 'center'
                      }}>
                          {/* Header */}
-                         <div style={{
-                             display: 'flex',
-                             flexDirection: 'column',
-                             width: '100%',
-                             border: '1px solid #14559b',
-                             overflow: 'hidden'
-                         }}>
-                             <div style={{display: 'flex', background: 'white'}}>
-                                 <div style={{padding: '4px 10px', borderRight: '1px solid #14559b', display: 'flex', alignItems: 'center'}}>
-                                     {/* Mock Logo */}
-                                     <div style={{width: '24px', height: '24px', background: '#d32f2f', transform: 'rotate(45deg)', borderRadius: '4px', position: 'relative'}}>
-                                        <div style={{position: 'absolute', top: '4px', left: '4px', right: '4px', bottom: '4px', background: 'white', borderRadius: '2px'}}>
-                                           <div style={{position: 'absolute', top: '2px', left: '2px', right: '2px', bottom: '2px', background: '#d32f2f', borderRadius: '1px'}}></div>
-                                        </div>
-                                     </div>
-                                 </div>
-                                 <div style={{background: '#14559b', flex: 1, padding: '6px 12px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                                     <div style={{color: 'white', fontWeight: 700, fontSize: '1.25rem', lineHeight: 1.1, fontFamily: 'sans-serif'}}>सेन्ट्रल बैंक ऑफ़ इंडिया</div>
-                                     <div style={{color: 'white', fontWeight: 600, fontSize: '0.95rem'}}>Central Bank of India</div>
-                                 </div>
-                             </div>
-                             <div style={{background: '#d32f2f', color: 'white', fontSize: '0.45rem', textAlign: 'center', padding: '3px 0', letterSpacing: '0.5px'}}>
-                                 1911 से आपके लिए "केन्द्रित"  |  "CENTRAL" TO YOU SINCE 1911
-                             </div>
-                         </div>
+                        <div style={{
+                           display: 'flex',
+                           alignItems: 'center',
+                           justifyContent: 'center',
+                           background: 'white',
+                           padding: '10px 0',
+                           borderBottom: '1px solid #14559b'
+                           }}>
+                           <img 
+                              src={logo} 
+                              alt="Central Bank of India"
+                              style={{
+                                 width: '290px',
+                                 height: 'auto',
+                                 objectFit: 'contain'
+                              }}
+                           />
+                        </div>
                          
                          <h2 style={{margin: '20px 0 4px', fontSize: '1.1rem', fontWeight: 700, textAlign: 'center', textTransform: 'uppercase', color: '#111'}}>
                             {selectedVpa?.merchant_name || 'MERCHANT NAME'}

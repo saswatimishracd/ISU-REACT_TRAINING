@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, UserPlus, Volume2, QrCode, HelpCircle } from 'lucide-react';
+import logo from '../assets/CentralBankLogo.png'
 
 export default function Sidebar() {
   return (
     <div className="app-sidebar">
       <div className="sidebar-header">
-        CBOI Merchant
+        <img src={logo} alt="Central Bank of India" />
       </div>
       <ul className="sidebar-menu">
         <li>
@@ -16,17 +17,12 @@ export default function Sidebar() {
         </li>
         <li>
           <NavLink to="/user-fetch" className={({isActive}) => isActive ? "sidebar-link active" : "sidebar-link"}>
-            <Users size={20} /> User Fetch
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/onboarding" className={({isActive}) => isActive ? "sidebar-link active" : "sidebar-link"}>
-            <UserPlus size={20} />  Onboarding
+            <Users size={20} /> Transaction Report
           </NavLink>
         </li>
         <li>
           <NavLink to="/soundbox" className={({isActive}) => isActive ? "sidebar-link active" : "sidebar-link"}>
-            <Volume2 size={20} /> Soundbox Manager
+            <Volume2 size={20} /> Language Update
           </NavLink>
         </li>
         <li>

@@ -5,6 +5,7 @@ import { Bell, User, LogOut } from 'lucide-react';
 import { useAuth } from 'react-oidc-context';
 import { useAuthData } from '../context/AuthDataContext';
 import axios from 'axios';
+import female from '../assets/female.png'
 
 export default function Layout() {
   const auth = useAuth();
@@ -80,7 +81,7 @@ export default function Layout() {
              <Bell size={20} color="var(--text-secondary)" style={{cursor: 'pointer'}} />
              <div style={{position: 'relative'}}>
                 <div onClick={() => setMenuOpen(!menuOpen)} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', background: 'var(--background-color)', padding: '6px 12px', borderRadius: '6px'}}>
-                   <User size={16} color="var(--primary-blue)" /> <span style={{fontWeight: 500, fontSize: '0.9rem'}}>{auth.user?.profile?.name || 'Ben Stebin'}</span>
+                   <img src={female} alt="" style={{width: '24px', height: '24px', borderRadius: '50%'}} /> <span style={{fontWeight: 500, fontSize: '0.9rem'}}>{auth.user?.profile?.name || 'Ben Stebin'}</span>
                 </div>
                 {menuOpen && (
                    <div style={{position: 'absolute', top: '120%', right: 0, background: 'white', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '10px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', minWidth: '150px', zIndex: 100}}>
